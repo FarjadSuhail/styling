@@ -1,59 +1,68 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Lobster&display=swap");
 
-/* css reset */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0.5rem;
   font-family: "Roboto", sans-serif;
-  text-align: center;
+  font-size: 1.5rem;
+  min-height: 200vh;
 }
 
-nav {
-  border: 2px solid #333;
-  border-radius: 2rem;
-  margin: 0 auto 1rem;
-  max-width: 600px;
-  font-size: 3rem;
-  line-height: 7rem;
+.outer-container {
+  border: 3px dashed #000;
+  width: 75vw;
+  height: 85vh;
+  margin: 40px auto;
+  position: relative;
 }
 
-h2 {
+.inner-container {
+  border: 2px solid #00f;
+  width: 40vw;
+  height: 50vh;
+  margin: 200px auto;
+  /* position: relative; */
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  color: #fff;
   padding: 1rem;
-  background-color: gold;
-  border-radius: 2rem 2rem 0 0;
 }
 
-ul {
-  list-style-type: none;
+/* picks the closest ancestor, if no ancestor then browser window is the por */
+.absolute {
+  background-color: #00f;
+  /* position: static; */
+  position: absolute;
+  top: 0;
+  /* to remove something for visibilty but screen reader must be enable to read it, display:none and opacity doesnt work as
+  it removes it, do this as they are not good for accessibility */
+  /* left: -10000px; */
+  left: 0;
+  z-index: 1;
 }
 
-li {
-  border-top: 1px solid #333;
+.relative {
+  background-color: #f00;
+  position: relative;
+  top: 100px;
+  left: 100px;
 }
 
-/* li by default has an inline display, we change it to block as it has 100% width */
-li a {
-  display: block;
+.fixed {
+  background-color: green;
+  position: fixed;
+  top: 100px;
 }
 
-li a,
-li a:visited {
-  text-decoration: none;
-  color: #333;
-}
-
-li a:hover,
-li a:focus {
-  background: #333;
-  color: whitesmoke;
-  cursor: pointer;
-}
-
-li:last-child a {
-  border-radius: 0 0 2rem 2rem;
+.sticky {
+  background-color: palevioletred;
+  position: sticky;
+  top: 0;
 }
