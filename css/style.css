@@ -1,59 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-/* css reset */
+/* block-level take whole width, stack on top of each other, 
+inline-elements take only required width, stack together if space available
+inline-block hybrid, where we are inline but can apply margin, height such propertises that are of block elements */
+
+/* inline-block can be handy when we what to style a link as a btn and turning a list into a row */
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
-
 body {
-  margin: 0.5rem;
+  font-size: 2rem;
   font-family: "Roboto", sans-serif;
-  text-align: center;
 }
 
-nav {
-  border: 2px solid #333;
-  border-radius: 2rem;
-  margin: 0 auto 1rem;
-  max-width: 600px;
-  font-size: 3rem;
-  line-height: 7rem;
+/* main {
+  background-color: aqua;
+} */
+
+/* block level elements have 100% width and they stack on top on each other */
+p {
+  background-color: lightgray;
 }
 
-h2 {
-  padding: 1rem;
-  background-color: gold;
-  border-radius: 2rem 2rem 0 0;
+/* height, margin-top, botoom cannot be applied to an inline element it was span with class opp
+   padding overlaps
+*/
+.opposite {
+  display: inline-block;
+  background-color: #333;
+  color: whitesmoke;
+  margin-top: 100px;
+  padding: 4rem;
 }
 
 ul {
+  /* display: none; */
   list-style-type: none;
+  padding: 0.5rem;
+  text-align: right;
+  background-color: black;
+  margin: 0;
 }
 
 li {
-  border-top: 1px solid #333;
+  display: inline-block;
+  margin-inline: 0.5rem;
 }
 
-/* li by default has an inline display, we change it to block as it has 100% width */
 li a {
-  display: block;
-}
-
-li a,
-li a:visited {
+  color: white;
   text-decoration: none;
-  color: #333;
 }
-
 li a:hover,
 li a:focus {
-  background: #333;
-  color: whitesmoke;
-  cursor: pointer;
-}
-
-li:last-child a {
-  border-radius: 0 0 2rem 2rem;
+  text-decoration: underline;
 }
