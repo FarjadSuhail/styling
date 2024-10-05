@@ -1,59 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-/* css reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: 0;
-}
-
+/* floats are used to float things to the left and right, we can wrap text around it 
+and use it in a container using the display: flow-root property
+useful for blogs and newspaper pages
+*/
 body {
-  margin: 0.5rem;
+  font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
-  text-align: center;
 }
 
-nav {
-  border: 2px solid #333;
-  border-radius: 2rem;
-  margin: 0 auto 1rem;
-  max-width: 600px;
-  font-size: 3rem;
-  line-height: 7rem;
-}
-
-h2 {
+.block {
+  width: 30vw;
+  height: 30vw;
+  background-color: black;
+  color: white;
   padding: 1rem;
-  background-color: gold;
-  border-radius: 2rem 2rem 0 0;
 }
 
-ul {
-  list-style-type: none;
+.left {
+  float: left;
+  margin-right: 1rem;
 }
 
-li {
-  border-top: 1px solid #333;
+.right {
+  float: right;
+  margin-left: 1rem;
 }
 
-/* li by default has an inline display, we change it to block as it has 100% width */
-li a {
-  display: block;
+.clear {
+  clear: both;
 }
 
-li a,
-li a:visited {
-  text-decoration: none;
-  color: #333;
-}
-
-li a:hover,
-li a:focus {
-  background: #333;
-  color: whitesmoke;
-  cursor: pointer;
-}
-
-li:last-child a {
-  border-radius: 0 0 2rem 2rem;
+section {
+  background-color: bisque;
+  border: 1px solid #333;
+  padding: 1rem;
+  /* overflow: auto; */
+  display: flow-root;
 }
